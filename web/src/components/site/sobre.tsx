@@ -15,7 +15,7 @@ export function Sobre() {
       id="sobre"
       className="grid grid-cols-1 overflow-hidden md:grid-cols-2"
     >
-      <Reveal className="relative order-2 h-[90vw] max-h-[420px] p-4 md:h-auto md:max-h-none md:py-10 md:pl-10 lg:pl-16">
+      <Reveal className="relative order-2 h-[85vw] max-h-[400px] p-5 md:order-1 md:h-auto md:max-h-none md:py-14 md:pl-14 md:pr-6 lg:py-16 lg:pl-20 lg:pr-8">
         <div className="group relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.3)]">
           <Image
             src="/foto_secundaria.jpg"
@@ -28,7 +28,7 @@ export function Sobre() {
         </div>
       </Reveal>
 
-      <div className="flex flex-col justify-center bg-[var(--brand-warm-white)] px-6 py-16 md:order-1 md:px-14 md:py-24 lg:px-20">
+      <div className="flex flex-col justify-center bg-[var(--brand-warm-white)] px-6 py-16 md:order-2 md:px-14 md:py-24 lg:px-20">
         <Reveal className="mb-5 flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-terracotta)]">
           Sobre mim
           <span className="h-px flex-1 max-w-8 bg-[var(--brand-terracotta-light)]" />
