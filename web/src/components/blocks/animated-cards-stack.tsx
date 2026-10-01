@@ -129,9 +129,12 @@ export const CardTransformed = React.forwardRef<
       incrementRotation,
       0,
     ])
-    const transform = useMotionTemplate`translateZ(${
-      index * incrementZ
-    }px) translateY(${y}) rotate(${rotate}deg)`
+    // Interpolating a literal 0 (e.g. the first card, index * incrementZ === 0)
+    // directly into useMotionTemplate renders as an empty string ("translateZ(px)"),
+    // which is invalid CSS and silently drops the *entire* transform — freezing
+    // that card in place. Stringifying it first avoids the falsy-number case.
+    const translateZValue = String(index * incrementZ)
+    const transform = useMotionTemplate`translateZ(${translateZValue}px) translateY(${y}) rotate(${rotate}deg)`
 
     const dx = useTransform(scrollYProgress, rotateRange, [4, 0])
     const dy = useTransform(scrollYProgress, rotateRange, [4, 12])

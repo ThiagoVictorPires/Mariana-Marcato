@@ -119,7 +119,7 @@ export function Dificuldades() {
                   arrayLength={DIFICULDADES.length}
                   key={item.id}
                   variant="dark"
-                  index={index + 2}
+                  index={index}
                   className="!items-start !justify-start gap-4 text-left transition-[border-color,box-shadow] duration-300 hover:border-[var(--brand-sage-light)]/70 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.65)]"
                 >
                   <CardBody item={item} />
