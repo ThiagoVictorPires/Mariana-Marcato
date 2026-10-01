@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { FirebaseAnalytics } from "@/components/site/firebase-analytics";
 import { siteConfig } from "@/lib/site-config";
 
 const serif = Cormorant_Garamond({
@@ -67,6 +69,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-[var(--brand-warm-white)] text-[var(--brand-text-dark)] font-[family-name:var(--font-sans-brand)]">
         {children}
+        <Suspense fallback={null}>
+          <FirebaseAnalytics />
+        </Suspense>
       </body>
     </html>
   );
