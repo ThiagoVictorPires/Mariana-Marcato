@@ -89,7 +89,7 @@ export function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="flex flex-col gap-1 overflow-hidden bg-[var(--brand-warm-white)]/95 px-6 pb-6 backdrop-blur-md md:hidden"
+          className="flex flex-col gap-1 overflow-hidden rounded-b-2xl bg-[var(--brand-warm-white)]/95 px-6 pb-6 shadow-[0_20px_40px_-20px_rgba(42,31,26,0.25)] backdrop-blur-md md:hidden"
         >
           {LINKS.map((link) => (
             <li key={link.href}>

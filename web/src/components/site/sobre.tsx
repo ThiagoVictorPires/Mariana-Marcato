@@ -15,15 +15,17 @@ export function Sobre() {
       id="sobre"
       className="grid grid-cols-1 overflow-hidden md:grid-cols-2"
     >
-      <Reveal className="relative h-[90vw] max-h-[420px] overflow-hidden bg-[var(--brand-cream)] md:order-2 md:h-auto md:max-h-none">
-        <Image
-          src="/foto_secundaria.jpg"
-          alt="Mariana Marcato em seu consultório"
-          fill
-          loading="lazy"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-top [filter:sepia(10%)_contrast(1.03)]"
-        />
+      <Reveal className="relative h-[90vw] max-h-[420px] p-4 md:order-2 md:h-auto md:max-h-none md:py-10 md:pl-10 lg:pl-16">
+        <div className="relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.3)]">
+          <Image
+            src="/foto_secundaria.jpg"
+            alt="Mariana Marcato em seu consultório"
+            fill
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-top [filter:sepia(10%)_contrast(1.03)]"
+          />
+        </div>
       </Reveal>
 
       <div className="flex flex-col justify-center bg-[var(--brand-warm-white)] px-6 py-16 md:order-1 md:px-14 md:py-24 lg:px-20">
@@ -68,7 +70,7 @@ export function Sobre() {
           {FORMACAO.map((item) => (
             <div
               key={item}
-              className="border-l-2 border-[var(--brand-sage-light)] py-1.5 pl-4"
+              className="rounded-xl border border-[var(--brand-border)] bg-[var(--brand-cream)]/60 py-3 pl-4 pr-3 shadow-[0_8px_20px_-12px_rgba(42,31,26,0.15)]"
             >
               <p className="text-[0.8rem] leading-snug text-[var(--brand-text-mid)]">
                 {item}

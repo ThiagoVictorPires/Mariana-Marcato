@@ -65,7 +65,7 @@ export function Indicado() {
               <Reveal
                 key={item}
                 delay={0.1 + index * 0.05}
-                className="rounded-xl border border-[var(--brand-border)] bg-[var(--brand-warm-white)] px-5 py-4 text-[0.9rem] text-[var(--brand-text-mid)] transition-colors hover:border-[var(--brand-sage-dark)]/40"
+                className="rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-warm-white)] px-5 py-4 text-[0.9rem] text-[var(--brand-text-mid)] shadow-[0_12px_30px_-18px_rgba(42,31,26,0.25)] transition-all hover:-translate-y-0.5 hover:border-[var(--brand-sage-dark)]/40 hover:shadow-[0_16px_34px_-16px_rgba(42,31,26,0.3)]"
               >
                 {item}
               </Reveal>

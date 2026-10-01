@@ -68,13 +68,12 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative h-[55vh] md:h-auto">
-        <div className="absolute inset-0 bg-[var(--brand-cream)]" />
+      <div className="relative h-[55vh] p-4 md:h-auto md:py-10 md:pr-10 lg:pr-16">
         <motion.div
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative h-full w-full"
+          className="relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.35)]"
         >
           <Image
             src="/foto_principal.jpg"

@@ -48,7 +48,7 @@ export function Faq() {
         </Reveal>
       </div>
 
-      <div className="mx-auto max-w-2xl divide-y divide-[var(--brand-border)] border-y border-[var(--brand-border)]">
+      <div className="mx-auto max-w-2xl divide-y divide-[var(--brand-border)] overflow-hidden rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-warm-white)] shadow-[0_20px_50px_-30px_rgba(42,31,26,0.3)]">
         {FAQS.map((item, index) => {
           const isOpen = openIndex === index
           return (
@@ -56,7 +56,7 @@ export function Faq() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                className="flex w-full items-center justify-between gap-6 px-6 py-6 text-left"
                 aria-expanded={isOpen}
               >
                 <span className="text-[0.95rem] text-[var(--brand-text-dark)]">
@@ -81,7 +81,7 @@ export function Faq() {
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-6 text-[0.88rem] leading-[1.8] text-[var(--brand-text-mid)]">
+                    <p className="px-6 pb-6 text-[0.88rem] leading-[1.8] text-[var(--brand-text-mid)]">
                       {item.a}
                     </p>
                   </motion.div>
