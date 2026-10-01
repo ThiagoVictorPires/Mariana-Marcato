@@ -64,7 +64,7 @@ export function Faq() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-6 px-6 py-6 text-left"
+                className="flex w-full items-center justify-between gap-6 px-6 py-6 text-left transition-colors hover:bg-[var(--brand-cream)]/60"
                 aria-expanded={isOpen}
               >
                 <span className="text-[0.95rem] text-[var(--brand-text-dark)]">

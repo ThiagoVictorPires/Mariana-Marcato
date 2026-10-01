@@ -44,7 +44,7 @@ export default function BlogIndexPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col gap-2 py-8 transition-colors"
+              className="group -mx-6 flex flex-col gap-2 rounded-2xl px-6 py-8 transition-colors hover:bg-[var(--brand-cream)]/70"
             >
               <span className="text-[0.75rem] uppercase tracking-[0.1em] text-[var(--brand-text-light)]">
                 {formatDate(post.date)} · {post.readingTime}
@@ -55,8 +55,9 @@ export default function BlogIndexPage() {
               <p className="text-[0.9rem] leading-relaxed text-[var(--brand-text-mid)]">
                 {post.description}
               </p>
-              <span className="mt-1 text-[0.78rem] uppercase tracking-[0.1em] text-[var(--brand-sage-dark)]">
-                Ler artigo →
+              <span className="mt-1 inline-flex items-center gap-1.5 text-[0.78rem] uppercase tracking-[0.1em] text-[var(--brand-sage-dark)]">
+                Ler artigo
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>
             </Link>
           ))}

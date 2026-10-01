@@ -77,7 +77,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.35)]"
+          className="group relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.35)]"
         >
           <Image
             src="/foto_principal.jpg"
@@ -85,7 +85,7 @@ export function Hero() {
             fill
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-top mix-blend-multiply [filter:sepia(8%)_contrast(1.04)]"
+            className="object-cover object-top mix-blend-multiply [filter:sepia(8%)_contrast(1.04)] transition-transform duration-700 ease-out group-hover:scale-[1.06]"
           />
           {/* Scrim so the fixed navbar stays legible over any part of the photo */}
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 bg-gradient-to-b from-black/50 via-black/15 to-transparent" />

@@ -16,14 +16,14 @@ export function Sobre() {
       className="grid grid-cols-1 overflow-hidden md:grid-cols-2"
     >
       <Reveal className="relative order-2 h-[90vw] max-h-[420px] p-4 md:h-auto md:max-h-none md:py-10 md:pl-10 lg:pl-16">
-        <div className="relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.3)]">
+        <div className="group relative size-full overflow-hidden rounded-[1.75rem] bg-[var(--brand-cream)] shadow-[0_30px_70px_-20px_rgba(42,31,26,0.3)]">
           <Image
             src="/foto_secundaria.jpg"
             alt="Mariana Marcato em seu consultório"
             fill
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover object-top [filter:sepia(10%)_contrast(1.03)]"
+            className="object-cover object-top [filter:sepia(10%)_contrast(1.03)] transition-transform duration-700 ease-out group-hover:scale-[1.06]"
           />
         </div>
       </Reveal>

@@ -110,7 +110,7 @@ export function Dificuldades() {
                   key={item.id}
                   variant="dark"
                   index={index + 2}
-                  className="!items-start !justify-start gap-4 text-left"
+                  className="!items-start !justify-start gap-4 text-left transition-[border-color,box-shadow] duration-300 hover:border-[var(--brand-sage-light)]/70 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.65)]"
                 >
                   <CardBody item={item} />
                 </CardTransformed>
@@ -144,7 +144,7 @@ export function Dificuldades() {
           {DIFICULDADES.map((item) => (
             <div
               key={item.id}
-              className="flex w-[82vw] shrink-0 snap-center flex-col gap-4 rounded-2xl border border-stone-700/50 bg-[var(--brand-text-dark)] p-6 shadow-2xl shadow-black/50"
+              className="flex w-[82vw] shrink-0 snap-center flex-col gap-4 rounded-2xl border border-stone-700/50 bg-[var(--brand-text-dark)] p-6 shadow-2xl shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-sage-light)]/70"
             >
               <CardBody item={item} />
             </div>

@@ -49,9 +49,10 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[0.7rem] font-light uppercase tracking-[0.14em] text-[var(--brand-text-mid)]/70 transition-colors hover:text-[var(--brand-sage-dark)]"
+                className="group relative text-[0.7rem] font-light uppercase tracking-[0.14em] text-[var(--brand-text-mid)]/70 transition-colors hover:text-[var(--brand-sage-dark)]"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[var(--brand-sage-dark)] transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}
