@@ -69,7 +69,7 @@ export function Navbar() {
           type="button"
           aria-label="Abrir menu"
           onClick={() => setOpen((o) => !o)}
-          className="flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex size-11 -mr-2.5 flex-col items-center justify-center gap-1.5 md:hidden"
         >
           <span
             className={`h-px w-5 bg-[var(--brand-text-dark)]/70 transition-transform ${

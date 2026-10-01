@@ -15,10 +15,47 @@ const sans = DM_Sans({
   weight: ["300", "400", "500"],
 });
 
+const SITE_URL = "https://www.marianamarcato.com.br";
+const TITLE = "Mariana Marcato | Psicóloga em Araxá — Terapia Cognitivo-Comportamental";
+const DESCRIPTION =
+  "Psicóloga clínica em Araxá-MG, especialista em Terapia Cognitivo-Comportamental (TCC). Atendimento online e presencial para ansiedade, depressão, procrastinação e relacionamentos. Agende sua primeira consulta.";
+
 export const metadata: Metadata = {
-  title: "Mariana Marcato | Psicóloga em Araxá",
-  description:
-    "Tratamentos fundamentados na ciência para ajudar você a compreender suas dificuldades, desenvolver novas habilidades e construir uma vida com mais equilíbrio.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s | Mariana Marcato",
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "psicóloga em Araxá",
+    "psicóloga Araxá MG",
+    "terapia cognitivo-comportamental",
+    "TCC Araxá",
+    "terapia online",
+    "psicólogo ansiedade",
+    "psicólogo depressão",
+    "terapia para procrastinação",
+    "Mariana Marcato psicóloga",
+  ],
+  authors: [{ name: "Mariana Marcato" }],
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: SITE_URL,
+    siteName: "Mariana Marcato Psicóloga",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: "/foto_principal.jpg", width: 1200, height: 1600, alt: "Mariana Marcato, psicóloga" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/foto_principal.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

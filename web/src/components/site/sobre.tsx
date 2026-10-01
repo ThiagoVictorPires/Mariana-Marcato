@@ -15,7 +15,7 @@ export function Sobre() {
       id="sobre"
       className="grid grid-cols-1 overflow-hidden md:grid-cols-2"
     >
-      <Reveal className="relative h-[70vw] max-h-[480px] overflow-hidden bg-[var(--brand-cream)] md:order-2 md:h-auto md:max-h-none">
+      <Reveal className="relative h-[90vw] max-h-[420px] overflow-hidden bg-[var(--brand-cream)] md:order-2 md:h-auto md:max-h-none">
         <Image
           src="/foto_secundaria.jpg"
           alt="Mariana Marcato em seu consultório"

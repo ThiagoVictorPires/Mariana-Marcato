@@ -4,6 +4,7 @@ import { Faq } from "@/components/site/faq"
 import { Footer } from "@/components/site/footer"
 import { Hero } from "@/components/site/hero"
 import { Indicado } from "@/components/site/indicado"
+import { JsonLd } from "@/components/site/json-ld"
 import { Navbar } from "@/components/site/navbar"
 import { Processo } from "@/components/site/processo"
 import { Sobre } from "@/components/site/sobre"
@@ -13,6 +14,7 @@ import { WhatsappFloat } from "@/components/site/whatsapp-float"
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Navbar />
       <main>
         <Hero />
