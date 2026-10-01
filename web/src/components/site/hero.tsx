@@ -1,7 +1,8 @@
 "use client"
 
+import * as React from "react"
 import Image from "next/image"
-import { motion } from "motion/react"
+import { motion, useScroll, useTransform } from "motion/react"
 
 import { Annotate } from "@/components/site/annotate"
 import { siteConfig } from "@/lib/site-config"
@@ -9,9 +10,21 @@ import { siteConfig } from "@/lib/site-config"
 const WHATSAPP_URL = siteConfig.whatsappUrl
 
 export function Hero() {
+  const sectionRef = React.useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  })
+  // Stays fully visible while the hero is still mostly on screen, then
+  // dissolves to transparent right as it scrolls past, instead of
+  // cutting straight to the next section.
+  const opacity = useTransform(scrollYProgress, [0, 0.55, 1], [1, 1, 0])
+
   return (
-    <section
+    <motion.section
+      ref={sectionRef}
       id="home"
+      style={{ opacity }}
       className="relative grid min-h-svh grid-cols-1 overflow-hidden md:grid-cols-2"
     >
       <div className="relative z-10 flex flex-col justify-center px-6 pb-16 pt-32 md:px-14 md:pb-20 md:pt-36 lg:px-20">
@@ -91,6 +104,6 @@ export function Hero() {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 bg-gradient-to-b from-black/50 via-black/15 to-transparent" />
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
