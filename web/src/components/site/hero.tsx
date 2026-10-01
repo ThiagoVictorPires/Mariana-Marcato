@@ -72,7 +72,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative h-[55vh] p-4 md:h-auto md:py-10 md:pr-10 lg:pr-16">
+      <div className="relative h-[55vh] p-4 md:h-auto md:pb-10 md:pr-10 md:pt-28 lg:pr-16 lg:pt-32">
         <motion.div
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
