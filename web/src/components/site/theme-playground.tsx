@@ -15,22 +15,23 @@
 import * as React from "react"
 import { motion, AnimatePresence } from "motion/react"
 
-import { deriveShades } from "@/lib/color-utils"
+import { deriveShades, hexToHsl, hslToHex } from "@/lib/color-utils"
 
 interface Palette {
   name: string
   primary: string // maps to --brand-sage family (buttons, accents)
   accent: string // maps to --brand-terracotta family (highlights, links)
   cream: string // maps to --brand-cream (section backgrounds)
+  background: string // maps to --brand-warm-white (page/base background)
 }
 
 const PRESETS: Palette[] = [
-  { name: "Sálvia & Terracota (atual)", primary: "#5C7A5B", accent: "#C4896A", cream: "#F5F0E8" },
-  { name: "Lavanda & Dourado", primary: "#7C6FA3", accent: "#C9A24B", cream: "#F3EFF8" },
-  { name: "Azul Petróleo & Coral", primary: "#3E6E78", accent: "#E08E79", cream: "#EEF3F3" },
-  { name: "Rosa Empoeirado & Oliva", primary: "#8B7355", accent: "#C98A96", cream: "#F7EFEC" },
-  { name: "Terroso & Creme", primary: "#8A6F4E", accent: "#B86B4B", cream: "#F6F1E7" },
-  { name: "Verde Floresta & Mostarda", primary: "#3F5A45", accent: "#C99A3E", cream: "#F2F0E4" },
+  { name: "Sálvia & Terracota (atual)", primary: "#5C7A5B", accent: "#C4896A", cream: "#F5F0E8", background: "#FDFAF5" },
+  { name: "Lavanda & Dourado", primary: "#7C6FA3", accent: "#C9A24B", cream: "#F3EFF8", background: "#FBFAFD" },
+  { name: "Azul Petróleo & Coral", primary: "#3E6E78", accent: "#E08E79", cream: "#EEF3F3", background: "#F8FBFB" },
+  { name: "Rosa Empoeirado & Oliva", primary: "#8B7355", accent: "#C98A96", cream: "#F7EFEC", background: "#FDF8F6" },
+  { name: "Terroso & Creme", primary: "#8A6F4E", accent: "#B86B4B", cream: "#F6F1E7", background: "#FCFAF5" },
+  { name: "Verde Floresta & Mostarda", primary: "#3F5A45", accent: "#C99A3E", cream: "#F2F0E4", background: "#FAFAF4" },
 ]
 
 const VARS = {
@@ -40,6 +41,8 @@ const VARS = {
   terracottaLight: "--brand-terracotta-light",
   terracotta: "--brand-terracotta",
   cream: "--brand-cream",
+  warmWhite: "--brand-warm-white",
+  textDark: "--brand-text-dark",
   border: "--brand-border",
 }
 
@@ -47,6 +50,11 @@ function applyPalette(p: Palette) {
   const root = document.documentElement
   const sage = deriveShades(p.primary)
   const terracotta = deriveShades(p.accent)
+  // Dark sections (and the global text color) reuse one variable, so we
+  // tint it toward the chosen primary color's hue instead of exposing a
+  // separate picker — keeps it dark enough to stay readable either way.
+  const [primaryHue] = hexToHsl(p.primary)
+  const textDark = hslToHex(primaryHue, 18, 13)
 
   root.style.setProperty(VARS.sageLight, sage.light)
   root.style.setProperty(VARS.sage, sage.base)
@@ -54,6 +62,8 @@ function applyPalette(p: Palette) {
   root.style.setProperty(VARS.terracottaLight, terracotta.light)
   root.style.setProperty(VARS.terracotta, terracotta.base)
   root.style.setProperty(VARS.cream, p.cream)
+  root.style.setProperty(VARS.warmWhite, p.background)
+  root.style.setProperty(VARS.textDark, textDark)
   root.style.setProperty(VARS.border, `${sage.base}40`)
 }
 
@@ -107,7 +117,7 @@ export function ThemePlayground() {
 
   const [copied, setCopied] = React.useState(false)
   function handleCopy() {
-    const text = `Cor principal: ${custom.primary}\nCor de destaque: ${custom.accent}\nFundo: ${custom.cream}`
+    const text = `Cor principal: ${custom.primary}\nCor de destaque: ${custom.accent}\nFundo das seções: ${custom.cream}\nFundo principal: ${custom.background}`
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true)
       setTimeout(() => setCopied(false), 1800)
@@ -205,6 +215,15 @@ export function ThemePlayground() {
                   type="color"
                   value={custom.cream}
                   onChange={(e) => updateCustom("cream", e.target.value)}
+                  className="size-7 cursor-pointer rounded border border-neutral-300"
+                />
+              </label>
+              <label className="flex items-center justify-between text-xs text-neutral-600">
+                Fundo principal da página
+                <input
+                  type="color"
+                  value={custom.background}
+                  onChange={(e) => updateCustom("background", e.target.value)}
                   className="size-7 cursor-pointer rounded border border-neutral-300"
                 />
               </label>

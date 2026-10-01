@@ -1,5 +1,15 @@
 "use client"
 
+import {
+  AlertTriangle,
+  Brain,
+  CloudRain,
+  Hourglass,
+  TrendingDown,
+  UtensilsCrossed,
+  HeartCrack,
+  type LucideIcon,
+} from "lucide-react"
 import { motion } from "motion/react"
 
 import {
@@ -9,58 +19,58 @@ import {
 } from "@/components/blocks/animated-cards-stack"
 import { Reveal } from "@/components/site/reveal"
 import { SectionBlobs } from "@/components/site/section-blobs"
-import { SketchIcon } from "@/components/site/sketch-icon"
 
-const DIFICULDADES = [
+const DIFICULDADES: { id: string; icon: LucideIcon; title: string; text: string }[] = [
   {
     id: "tristeza",
-    icon: "tristeza",
+    icon: CloudRain,
     title: "Tristeza que parece não passar",
     text: "Há momentos em que levantar da cama exige esforço, as coisas que antes faziam sentido perdem a graça e a sensação é de apenas sobreviver aos dias. Juntos, podemos compreender o que mantém esse ciclo e construir caminhos para recuperar o prazer e o sentido da vida.",
   },
   {
     id: "preocupacoes",
-    icon: "preocupacoes",
+    icon: AlertTriangle,
     title: "Preocupações que nunca descansam",
     text: "A mente não desliga. Mesmo quando tudo parece bem, surgem pensamentos sobre o que pode dar errado, acompanhados de tensão, medo e dificuldade para relaxar. É possível aprender novas formas de lidar com essas preocupações e recuperar uma sensação de segurança.",
   },
   {
     id: "procrastinacao",
-    icon: "procrastinacao",
+    icon: Hourglass,
     title: "Você sabe o que precisa fazer, mas não consegue começar",
     text: "As tarefas se acumulam, os prazos apertam e a culpa aumenta. Quanto mais você adia, mais difícil parece agir. Vamos entender o que está por trás desse ciclo e desenvolver estratégias para retomar sua produtividade sem depender apenas da motivação.",
   },
   {
     id: "autocritica",
-    icon: "autocritica",
+    icon: TrendingDown,
     title: "A sensação de nunca ser suficiente",
     text: "Mesmo quando conquista algo importante, parece que sempre falta alguma coisa. Comparações constantes, autocrítica intensa e dificuldade em reconhecer suas próprias qualidades podem tornar a vida muito mais pesada do que ela precisa ser.",
   },
   {
     id: "alimentacao",
-    icon: "alimentacao",
+    icon: UtensilsCrossed,
     title: "A relação com a comida vai além da fome",
     text: "Muitas vezes comer serve para aliviar emoções, lidar com o estresse ou preencher um vazio momentâneo. O objetivo não é seguir dietas rígidas, mas compreender os comportamentos envolvidos na alimentação e construir mudanças sustentáveis.",
   },
   {
     id: "foco",
-    icon: "foco",
+    icon: Brain,
     title: "Uma mente acelerada em várias direções",
     text: "Manter o foco, organizar tarefas, lembrar compromissos ou concluir projetos pode parecer uma batalha diária. Existem maneiras de desenvolver estratégias que favoreçam uma rotina mais organizada e funcional, respeitando suas características.",
   },
   {
     id: "relacionamentos",
-    icon: "relacionamentos",
+    icon: HeartCrack,
     title: "Relacionamentos que machucam mais do que aproximam",
     text: "Conflitos repetitivos, dificuldade para colocar limites, medo de decepcionar ou de ser abandonado podem transformar vínculos importantes em fontes constantes de sofrimento. Trabalhar essas habilidades permite construir relações mais saudáveis e equilibradas.",
   },
-] as const
+]
 
 function CardBody({ item }: { item: (typeof DIFICULDADES)[number] }) {
+  const Icon = item.icon
   return (
     <>
       <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-[var(--brand-sage-light)]/10">
-        <SketchIcon name={item.icon} className="size-8 text-[var(--brand-sage-light)]" />
+        <Icon strokeWidth={1.5} className="size-7 text-[var(--brand-sage-light)]" />
       </div>
       <h3 className="font-[family-name:var(--font-serif)] text-xl font-normal leading-snug text-[var(--brand-cream)]">
         {item.title}
@@ -75,7 +85,7 @@ function CardBody({ item }: { item: (typeof DIFICULDADES)[number] }) {
 export function Dificuldades() {
   return (
     <section id="dificuldades" className="bg-[var(--brand-text-dark)] px-6 pt-24 md:px-14 lg:px-20">
-      <div className="relative mx-auto max-w-2xl overflow-hidden text-center">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[2.5rem] px-6 py-10 text-center sm:px-10">
         <SectionBlobs variant="dark" />
         <div className="relative z-10">
           <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-sage-light)]">
