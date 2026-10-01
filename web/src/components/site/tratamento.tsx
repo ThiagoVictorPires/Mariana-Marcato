@@ -1,11 +1,13 @@
 import { Annotate } from "@/components/site/annotate"
 import { Cta } from "@/components/site/cta"
 import { Reveal } from "@/components/site/reveal"
+import { SectionBlobs } from "@/components/site/section-blobs"
 
 export function Tratamento() {
   return (
-    <section id="tratamento" className="bg-[var(--brand-cream)] px-6 py-24 md:px-14 lg:px-20">
-      <div className="mx-auto max-w-3xl text-center">
+    <section id="tratamento" className="relative overflow-hidden bg-[var(--brand-cream)] px-6 py-24 md:px-14 lg:px-20">
+      <SectionBlobs />
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-terracotta)]">
           <span className="h-px w-8 bg-[var(--brand-terracotta-light)]" />
           Terapia Cognitivo-Comportamental
@@ -46,7 +48,9 @@ export function Tratamento() {
         </Reveal>
       </div>
 
-      <Cta />
+      <div className="relative z-10">
+        <Cta />
+      </div>
     </section>
   )
 }

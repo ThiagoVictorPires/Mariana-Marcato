@@ -1,5 +1,6 @@
 import { Cta } from "@/components/site/cta"
 import { Reveal } from "@/components/site/reveal"
+import { SectionBlobs } from "@/components/site/section-blobs"
 
 const INDICACOES = [
   "Sentem que perderam a qualidade de vida",
@@ -20,8 +21,9 @@ const EXPECTATIVAS = [
 
 export function Indicado() {
   return (
-    <section className="bg-[var(--brand-cream)] px-6 py-24 md:px-14 lg:px-20">
-      <div className="mx-auto grid max-w-5xl gap-16 md:grid-cols-2 md:gap-12">
+    <section className="relative overflow-hidden bg-[var(--brand-cream)] px-6 py-24 md:px-14 lg:px-20">
+      <SectionBlobs />
+      <div className="relative z-10 mx-auto grid max-w-5xl gap-16 md:grid-cols-2 md:gap-12">
         <div>
           <Reveal className="mb-5 flex items-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-terracotta)]">
             <span className="h-px w-8 bg-[var(--brand-terracotta-light)]" />
@@ -74,7 +76,7 @@ export function Indicado() {
         </div>
       </div>
 
-      <div className="mt-16">
+      <div className="relative z-10 mt-16">
         <Cta />
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { Annotate } from "@/components/site/annotate"
 import { Cta } from "@/components/site/cta"
 import { Reveal } from "@/components/site/reveal"
+import { SectionBlobs } from "@/components/site/section-blobs"
 
 const ETAPAS = [
   {
@@ -27,8 +28,9 @@ const ETAPAS = [
 
 export function Processo() {
   return (
-    <section id="processo" className="bg-[var(--brand-warm-white)] px-6 py-24 md:px-14 lg:px-20">
-      <div className="mx-auto max-w-2xl text-center">
+    <section id="processo" className="relative overflow-hidden bg-[var(--brand-warm-white)] px-6 py-24 md:px-14 lg:px-20">
+      <SectionBlobs />
+      <div className="relative z-10 mx-auto max-w-2xl text-center">
         <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-terracotta)]">
           <span className="h-px w-8 bg-[var(--brand-terracotta-light)]" />
           Como funciona o atendimento
@@ -50,7 +52,7 @@ export function Processo() {
         </Reveal>
       </div>
 
-      <div className="mx-auto max-w-3xl">
+      <div className="relative z-10 mx-auto max-w-3xl">
         {ETAPAS.map((etapa, index) => (
           <Reveal
             key={etapa.n}
@@ -75,7 +77,7 @@ export function Processo() {
         ))}
       </div>
 
-      <div className="mt-16">
+      <div className="relative z-10 mt-16">
         <Cta />
       </div>
     </section>

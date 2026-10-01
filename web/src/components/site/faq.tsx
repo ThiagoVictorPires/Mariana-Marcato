@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "motion/react"
 
 import { Cta } from "@/components/site/cta"
 import { Reveal } from "@/components/site/reveal"
+import { SectionBlobs } from "@/components/site/section-blobs"
 
 const FAQS = [
   {
@@ -39,8 +40,9 @@ export function Faq() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
 
   return (
-    <section id="faq" className="bg-[var(--brand-warm-white)] px-6 py-24 md:px-14 lg:px-20">
-      <div className="mx-auto max-w-2xl text-center">
+    <section id="faq" className="relative overflow-hidden bg-[var(--brand-warm-white)] px-6 py-24 md:px-14 lg:px-20">
+      <SectionBlobs />
+      <div className="relative z-10 mx-auto max-w-2xl text-center">
         <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-terracotta)]">
           <span className="h-px w-8 bg-[var(--brand-terracotta-light)]" />
           Perguntas Frequentes
@@ -108,7 +110,7 @@ export function Faq() {
         })}
       </div>
 
-      <div className="mt-16">
+      <div className="relative z-10 mt-16">
         <Cta />
       </div>
     </section>

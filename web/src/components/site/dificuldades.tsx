@@ -8,6 +8,7 @@ import {
   ContainerScroll,
 } from "@/components/blocks/animated-cards-stack"
 import { Reveal } from "@/components/site/reveal"
+import { SectionBlobs } from "@/components/site/section-blobs"
 import { SketchIcon } from "@/components/site/sketch-icon"
 
 const DIFICULDADES = [
@@ -74,25 +75,28 @@ function CardBody({ item }: { item: (typeof DIFICULDADES)[number] }) {
 export function Dificuldades() {
   return (
     <section id="dificuldades" className="bg-[var(--brand-text-dark)] px-6 pt-24 md:px-14 lg:px-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-sage-light)]">
-          <span className="h-px w-8 bg-[var(--brand-sage)]" />
-          Dificuldades
-          <span className="h-px w-8 bg-[var(--brand-sage)]" />
-        </Reveal>
-        <Reveal
-          delay={0.05}
-          className="mb-6 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3vw,2.8rem)] font-light leading-tight text-[var(--brand-cream)]"
-        >
-          As dificuldades emocionais nem sempre aparecem{" "}
-          <em className="italic text-[var(--brand-sage-light)]">
-            da mesma forma
-          </em>
-        </Reveal>
-        <Reveal delay={0.1} className="mb-4 text-[0.95rem] leading-[1.9] text-[var(--brand-cream)]/70">
-          Conheça algumas situações frequentemente trabalhadas durante o
-          processo terapêutico.
-        </Reveal>
+      <div className="relative mx-auto max-w-2xl overflow-hidden text-center">
+        <SectionBlobs variant="dark" />
+        <div className="relative z-10">
+          <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-sage-light)]">
+            <span className="h-px w-8 bg-[var(--brand-sage)]" />
+            Dificuldades
+            <span className="h-px w-8 bg-[var(--brand-sage)]" />
+          </Reveal>
+          <Reveal
+            delay={0.05}
+            className="mb-6 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3vw,2.8rem)] font-light leading-tight text-[var(--brand-cream)]"
+          >
+            As dificuldades emocionais nem sempre aparecem{" "}
+            <em className="italic text-[var(--brand-sage-light)]">
+              da mesma forma
+            </em>
+          </Reveal>
+          <Reveal delay={0.1} className="mb-4 text-[0.95rem] leading-[1.9] text-[var(--brand-cream)]/70">
+            Conheça algumas situações frequentemente trabalhadas durante o
+            processo terapêutico.
+          </Reveal>
+        </div>
       </div>
 
       {/* Desktop: scroll-driven stack */}
