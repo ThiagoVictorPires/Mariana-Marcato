@@ -3,6 +3,8 @@
 import Image from "next/image"
 import { motion } from "motion/react"
 
+import { Annotate } from "@/components/site/annotate"
+
 const WHATSAPP_URL =
   "https://api.whatsapp.com/send?phone=5534984397438&text=Ol%C3%A1%20Mari%2C%20eu%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
 
@@ -30,9 +32,11 @@ export function Hero() {
           className="mb-7 font-[family-name:var(--font-serif)] text-[clamp(2.4rem,5.2vw,4.4rem)] font-light leading-[1.12] text-[var(--brand-text-dark)]"
         >
           Entender o que está acontecendo é o{" "}
-          <em className="text-[var(--brand-terracotta)] not-italic font-light italic">
-            primeiro passo
-          </em>{" "}
+          <Annotate type="circle" color="var(--brand-terracotta)" strokeWidth={2} padding={6} delay={1000}>
+            <em className="text-[var(--brand-terracotta)] not-italic font-light italic">
+              primeiro passo
+            </em>
+          </Annotate>{" "}
           para mudar.
         </motion.h1>
 

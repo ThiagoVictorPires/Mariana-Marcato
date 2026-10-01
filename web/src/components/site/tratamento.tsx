@@ -1,3 +1,4 @@
+import { Annotate } from "@/components/site/annotate"
 import { Cta } from "@/components/site/cta"
 import { Reveal } from "@/components/site/reveal"
 
@@ -16,9 +17,11 @@ export function Tratamento() {
           className="mb-8 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3vw,2.8rem)] font-light leading-tight text-[var(--brand-text-dark)]"
         >
           O tratamento certo pode{" "}
-          <em className="italic text-[var(--brand-sage-dark)]">
-            transformar
-          </em>{" "}
+          <Annotate type="box" color="var(--brand-sage-dark)" strokeWidth={1.5} padding={5}>
+            <em className="italic text-[var(--brand-sage-dark)]">
+              transformar
+            </em>
+          </Annotate>{" "}
           a forma como você vive
         </Reveal>
 
