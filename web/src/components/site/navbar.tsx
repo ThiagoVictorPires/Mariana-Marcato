@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { motion, useMotionValueEvent, useScroll } from "motion/react"
 
 import { siteConfig } from "@/lib/site-config"
@@ -37,11 +38,11 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
-        <a
-          href="/"
-          className="font-[family-name:var(--font-serif)] text-[1.05rem] font-light tracking-wide text-[var(--brand-text-dark)]/90"
-        >
-          Mariana <span className="text-[var(--brand-sage-dark)]/80">Marcato</span>
+        <a href="/" className="flex items-center gap-2.5">
+          <Image src="/logo-mm.png" alt="" width={36} height={26} className="h-7 w-auto opacity-90" />
+          <span className="font-[family-name:var(--font-serif)] text-[1.05rem] font-light tracking-wide text-[var(--brand-text-dark)]/90">
+            Mariana <span className="text-[var(--brand-sage-dark)]/80">Marcato</span>
+          </span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
