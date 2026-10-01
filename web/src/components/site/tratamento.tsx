@@ -17,7 +17,7 @@ export function Tratamento() {
           className="mb-8 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3vw,2.8rem)] font-light leading-tight text-[var(--brand-text-dark)]"
         >
           O tratamento certo pode{" "}
-          <Annotate type="box" color="var(--brand-sage-dark)" strokeWidth={1.5} padding={5}>
+          <Annotate type="box" color="var(--brand-sage-dark)" strokeWidth={1.25} padding={4}>
             <em className="italic text-[var(--brand-sage-dark)]">
               transformar
             </em>

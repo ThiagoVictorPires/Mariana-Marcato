@@ -32,7 +32,7 @@ export function Hero() {
           className="mb-7 font-[family-name:var(--font-serif)] text-[clamp(2.4rem,5.2vw,4.4rem)] font-light leading-[1.12] text-[var(--brand-text-dark)]"
         >
           Entender o que está acontecendo é o{" "}
-          <Annotate type="circle" color="var(--brand-terracotta)" strokeWidth={2} padding={6} delay={1000}>
+          <Annotate type="underline" color="var(--brand-terracotta)" strokeWidth={1.5} padding={3} delay={1000}>
             <em className="text-[var(--brand-terracotta)] not-italic font-light italic">
               primeiro passo
             </em>
