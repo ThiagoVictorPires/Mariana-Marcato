@@ -113,6 +113,7 @@ nav.scrolled {
 }
 .hero-img {
   width: 100%; height: 100%; object-fit: cover;
+  object-position: center 20%;
   position: relative; z-index: 2;
   filter: sepia(8%) contrast(1.04);
   mix-blend-mode: multiply;
@@ -162,6 +163,7 @@ nav.scrolled {
 .sobre-img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   filter: sepia(10%) contrast(1.03);
 }
 .sobre-content {
@@ -550,10 +552,10 @@ footer {
   .nav-links { display: none; }
   #home { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 120px 36px 60px; }
-  .hero-right { height: 70vw; }
+  .hero-right { height: 100vw; max-height: 480px; }
   .hero-badge { left: 20px; bottom: 30px; }
   #sobre, .symptoms-layout, .contact-layout { grid-template-columns: 1fr; gap: 0; }
-  .sobre-img-wrap { height: 60vw; }
+  .sobre-img-wrap { height: 90vw; max-height: 420px; }
   .sobre-content { padding: 60px 36px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; gap: 2px; }
