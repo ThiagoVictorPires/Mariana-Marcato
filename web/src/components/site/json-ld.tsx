@@ -1,22 +1,24 @@
+import { siteConfig } from "@/lib/site-config"
+
 export function JsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Psychologist",
-    name: "Mariana Marcato",
+    name: siteConfig.name,
     description:
       "Psicóloga clínica especialista em Terapia Cognitivo-Comportamental (TCC), atendimento online e presencial em Araxá-MG.",
-    url: "https://www.marianamarcato.com.br",
-    image: "https://www.marianamarcato.com.br/foto_principal.jpg",
-    telephone: "+5534984397438",
-    email: "mariana.marcato@outlook.com",
+    url: siteConfig.siteUrl,
+    image: `${siteConfig.siteUrl}/foto_principal.jpg`,
+    telephone: `+${siteConfig.whatsappNumber}`,
+    email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Araxá",
-      addressRegion: "MG",
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.state,
       addressCountry: "BR",
     },
-    areaServed: ["Araxá", "Minas Gerais", "Brasil"],
-    sameAs: ["https://www.instagram.com/psi.marianamarcato"],
+    areaServed: [siteConfig.city, "Minas Gerais", "Brasil"],
+    sameAs: [siteConfig.instagramUrl],
     medicalSpecialty: "Psychiatric",
     availableService: {
       "@type": "MedicalTherapy",

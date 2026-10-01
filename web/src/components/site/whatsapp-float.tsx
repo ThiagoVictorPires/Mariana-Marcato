@@ -2,8 +2,9 @@
 
 import { motion } from "motion/react"
 
-const WHATSAPP_URL =
-  "https://api.whatsapp.com/send?phone=5534984397438&text=Ol%C3%A1%20Mari%2C%20eu%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+import { siteConfig } from "@/lib/site-config"
+
+const WHATSAPP_URL = siteConfig.whatsappUrl
 
 export function WhatsappFloat() {
   return (

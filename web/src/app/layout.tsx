@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/site-config";
 
 const serif = Cormorant_Garamond({
   variable: "--font-serif",
@@ -15,7 +16,7 @@ const sans = DM_Sans({
   weight: ["300", "400", "500"],
 });
 
-const SITE_URL = "https://www.marianamarcato.com.br";
+const SITE_URL = siteConfig.siteUrl;
 const TITLE = "Mariana Marcato | Psicóloga em Araxá — Terapia Cognitivo-Comportamental";
 const DESCRIPTION =
   "Psicóloga clínica em Araxá-MG, especialista em Terapia Cognitivo-Comportamental (TCC). Atendimento online e presencial para ansiedade, depressão, procrastinação e relacionamentos. Agende sua primeira consulta.";

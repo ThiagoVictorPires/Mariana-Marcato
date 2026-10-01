@@ -1,12 +1,18 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { AnimatePresence, motion } from "motion/react"
 
 import { Cta } from "@/components/site/cta"
 import { Reveal } from "@/components/site/reveal"
 
 const FAQS = [
+  {
+    q: "O que conversamos em sessão — e meus dados — ficam realmente em sigilo?",
+    a: "Sim. Como psicóloga, estou sujeita ao sigilo profissional previsto no Código de Ética do CFP: tudo o que é discutido em sessão é confidencial, com raríssimas exceções previstas em lei (risco iminente à vida). E os dados que você envia pelo formulário deste site — nome, e-mail, telefone — não ficam armazenados em nenhum banco de dados: a mensagem vai direto para o WhatsApp, só entre você e eu.",
+    link: { href: "/politica-de-privacidade", label: "Ver política de privacidade completa" },
+  },
   {
     q: "Quanto tempo dura cada sessão?",
     a: "As sessões duram 50 minutos.",
@@ -81,9 +87,19 @@ export function Faq() {
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="px-6 pb-6 text-[0.88rem] leading-[1.8] text-[var(--brand-text-mid)]">
-                      {item.a}
-                    </p>
+                    <div className="px-6 pb-6">
+                      <p className="text-[0.88rem] leading-[1.8] text-[var(--brand-text-mid)]">
+                        {item.a}
+                      </p>
+                      {item.link && (
+                        <Link
+                          href={item.link.href}
+                          className="mt-3 inline-block text-[0.8rem] font-medium text-[var(--brand-sage-dark)] underline underline-offset-2"
+                        >
+                          {item.link.label} →
+                        </Link>
+                      )}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

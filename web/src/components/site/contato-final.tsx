@@ -1,7 +1,9 @@
-import { Reveal } from "@/components/site/reveal"
+import Link from "next/link"
 
-const WHATSAPP_URL =
-  "https://api.whatsapp.com/send?phone=5534984397438&text=Ol%C3%A1%20Mari%2C%20eu%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.";
+import { Reveal } from "@/components/site/reveal"
+import { siteConfig } from "@/lib/site-config"
+
+const WHATSAPP_URL = siteConfig.whatsappUrl
 
 export function ContatoFinal() {
   return (
@@ -23,6 +25,17 @@ export function ContatoFinal() {
           >
             Agendar primeira consulta
           </a>
+        </Reveal>
+
+        <Reveal
+          delay={0.2}
+          className="mt-5 flex items-center justify-center gap-2 text-[0.75rem] text-[var(--brand-cream)]/45"
+        >
+          <span aria-hidden>🔒</span>
+          Conversa 100% confidencial ·{" "}
+          <Link href="/politica-de-privacidade" className="underline underline-offset-2 hover:text-[var(--brand-cream)]/70">
+            saiba como cuidamos dos seus dados
+          </Link>
         </Reveal>
 
         <Reveal

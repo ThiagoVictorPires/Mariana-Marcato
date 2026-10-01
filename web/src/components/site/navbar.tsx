@@ -3,16 +3,18 @@
 import * as React from "react"
 import { motion, useMotionValueEvent, useScroll } from "motion/react"
 
+import { siteConfig } from "@/lib/site-config"
+
 const LINKS = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#tratamento", label: "Tratamento" },
-  { href: "#dificuldades", label: "Dificuldades" },
-  { href: "#processo", label: "Processo" },
-  { href: "#faq", label: "Dúvidas" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#tratamento", label: "Tratamento" },
+  { href: "/#dificuldades", label: "Dificuldades" },
+  { href: "/#processo", label: "Processo" },
+  { href: "/#faq", label: "Dúvidas" },
+  { href: "/blog", label: "Blog" },
 ]
 
-const WHATSAPP_URL =
-  "https://api.whatsapp.com/send?phone=5534984397438&text=Ol%C3%A1%20Mari%2C%20eu%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+const WHATSAPP_URL = siteConfig.whatsappUrl
 
 export function Navbar() {
   const { scrollY } = useScroll()
@@ -36,7 +38,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <a
-          href="#home"
+          href="/"
           className="font-[family-name:var(--font-serif)] text-[1.05rem] font-light tracking-wide text-[var(--brand-text-dark)]/90"
         >
           Mariana <span className="text-[var(--brand-sage-dark)]/80">Marcato</span>
