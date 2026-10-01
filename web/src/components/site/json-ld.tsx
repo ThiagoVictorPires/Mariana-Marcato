@@ -9,6 +9,7 @@ export function JsonLd() {
       "Psicóloga clínica especialista em Terapia Cognitivo-Comportamental (TCC), atendimento online e presencial em Araxá-MG.",
     url: siteConfig.siteUrl,
     image: `${siteConfig.siteUrl}/foto_principal.jpg`,
+    logo: `${siteConfig.siteUrl}/logo-mm.png`,
     telephone: `+${siteConfig.whatsappNumber}`,
     email: siteConfig.email,
     address: {
