@@ -85,7 +85,7 @@ function CardBody({ item }: { item: (typeof DIFICULDADES)[number] }) {
 export function Dificuldades() {
   return (
     <section id="dificuldades" className="bg-[var(--brand-text-dark)] px-6 pt-24 md:px-14 lg:px-20">
-      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[2.5rem] px-6 py-10 text-center sm:px-10">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[2.5rem] px-6 py-6 text-center sm:px-10">
         <SectionBlobs variant="dark" />
         <div className="relative z-10">
           <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-sage-light)]">
