@@ -1,0 +1,100 @@
+"use client"
+
+import * as React from "react"
+import { AnimatePresence, motion } from "motion/react"
+
+import { Cta } from "@/components/site/cta"
+import { Reveal } from "@/components/site/reveal"
+
+const FAQS = [
+  {
+    q: "Quanto tempo dura cada sessão?",
+    a: "As sessões duram 50 minutos.",
+  },
+  {
+    q: "Os atendimentos são online ou presenciais?",
+    a: "Acontecem na modalidade online, sem restrição geográfica, e presencial na cidade de Araxá — MG.",
+  },
+  {
+    q: "Com que frequência acontecem?",
+    a: "Acontecem, em geral, semanalmente, com duração média de 50 a 60 minutos.",
+  },
+  {
+    q: "Aceita plano de saúde?",
+    a: "Não atendo por plano de saúde, porém realizo a emissão dos recibos necessários para que você solicite o reembolso junto ao seu plano, caso tenha esse benefício.",
+  },
+  {
+    q: "Em quanto tempo vou perceber resultados?",
+    a: "Embora não exista um prazo único, muitas pessoas relatam que, já nas primeiras sessões, passam a compreender melhor suas dificuldades e se sentem mais preparadas para lidar com elas. Cada processo é único e depende dos objetivos terapêuticos, da complexidade da situação e do momento de vida de cada pessoa — mais do que mudanças rápidas, o compromisso é construir transformações sólidas e duradouras.",
+  },
+]
+
+export function Faq() {
+  const [openIndex, setOpenIndex] = React.useState<number | null>(0)
+
+  return (
+    <section id="faq" className="bg-[var(--brand-warm-white)] px-6 py-24 md:px-14 lg:px-20">
+      <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mb-5 flex items-center justify-center gap-3 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-terracotta)]">
+          <span className="h-px w-8 bg-[var(--brand-terracotta-light)]" />
+          Perguntas Frequentes
+          <span className="h-px w-8 bg-[var(--brand-terracotta-light)]" />
+        </Reveal>
+        <Reveal
+          delay={0.05}
+          className="mb-16 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3vw,2.8rem)] font-light leading-tight text-[var(--brand-text-dark)]"
+        >
+          Tirando suas <em className="italic text-[var(--brand-sage-dark)]">dúvidas</em>
+        </Reveal>
+      </div>
+
+      <div className="mx-auto max-w-2xl divide-y divide-[var(--brand-border)] border-y border-[var(--brand-border)]">
+        {FAQS.map((item, index) => {
+          const isOpen = openIndex === index
+          return (
+            <Reveal key={item.q} delay={index * 0.04}>
+              <button
+                type="button"
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                aria-expanded={isOpen}
+              >
+                <span className="text-[0.95rem] text-[var(--brand-text-dark)]">
+                  {item.q}
+                </span>
+                <span
+                  className={`flex size-6 shrink-0 items-center justify-center rounded-full border border-[var(--brand-border)] text-sm transition-all duration-300 ${
+                    isOpen
+                      ? "rotate-45 border-[var(--brand-sage-dark)] bg-[var(--brand-sage-dark)] text-white"
+                      : "text-[var(--brand-sage-dark)]"
+                  }`}
+                >
+                  +
+                </span>
+              </button>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-6 text-[0.88rem] leading-[1.8] text-[var(--brand-text-mid)]">
+                      {item.a}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </Reveal>
+          )
+        })}
+      </div>
+
+      <div className="mt-16">
+        <Cta />
+      </div>
+    </section>
+  )
+}
