@@ -1,5 +1,7 @@
 "use client"
 
+import { motion } from "motion/react"
+
 import {
   CardTransformed,
   CardsContainer,
@@ -69,31 +71,74 @@ export function Dificuldades() {
         </Reveal>
       </div>
 
-      <ContainerScroll className="container h-[420vh]">
-        <div className="sticky left-0 top-0 h-svh w-full py-12">
-          <CardsContainer className="mx-auto size-full h-[400px] w-[320px] sm:h-[420px] sm:w-[380px]">
-            {DIFICULDADES.map((item, index) => (
-              <CardTransformed
-                arrayLength={DIFICULDADES.length}
-                key={item.id}
-                variant="dark"
-                index={index + 2}
-                className="!items-start !justify-start text-left"
-              >
-                <span className="font-[family-name:var(--font-serif)] text-3xl font-light text-[var(--brand-sage-light)]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-[family-name:var(--font-serif)] text-xl font-normal leading-snug text-[var(--brand-cream)]">
-                  {item.title}
-                </h3>
-                <p className="text-[0.85rem] leading-relaxed text-[var(--brand-cream)]/65">
-                  {item.text}
-                </p>
-              </CardTransformed>
-            ))}
-          </CardsContainer>
+      {/* Desktop: scroll-driven stack */}
+      <div className="hidden md:block">
+        <ContainerScroll className="container h-[420vh]">
+          <div className="sticky left-0 top-0 h-svh w-full py-12">
+            <CardsContainer className="mx-auto size-full h-[420px] w-[380px]">
+              {DIFICULDADES.map((item, index) => (
+                <CardTransformed
+                  arrayLength={DIFICULDADES.length}
+                  key={item.id}
+                  variant="dark"
+                  index={index + 2}
+                  className="!items-start !justify-start text-left"
+                >
+                  <span className="font-[family-name:var(--font-serif)] text-3xl font-light text-[var(--brand-sage-light)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-[family-name:var(--font-serif)] text-xl font-normal leading-snug text-[var(--brand-cream)]">
+                    {item.title}
+                  </h3>
+                  <p className="text-[0.85rem] leading-relaxed text-[var(--brand-cream)]/65">
+                    {item.text}
+                  </p>
+                </CardTransformed>
+              ))}
+            </CardsContainer>
+          </div>
+        </ContainerScroll>
+      </div>
+
+      {/* Mobile: drag/swipe horizontal carousel */}
+      <div className="md:hidden">
+        <Reveal
+          delay={0.15}
+          className="mb-4 flex items-center justify-center gap-2 text-[0.72rem] text-[var(--brand-cream)]/50"
+        >
+          <motion.span
+            animate={{ x: [0, 6, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            ←
+          </motion.span>
+          arraste para o lado
+          <motion.span
+            animate={{ x: [0, -6, 0] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            →
+          </motion.span>
+        </Reveal>
+        <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {DIFICULDADES.map((item, index) => (
+            <div
+              key={item.id}
+              className="flex w-[82vw] shrink-0 snap-center flex-col gap-4 rounded-2xl border border-stone-700/50 bg-[var(--brand-text-dark)] p-6 shadow-2xl shadow-black/50"
+            >
+              <span className="font-[family-name:var(--font-serif)] text-3xl font-light text-[var(--brand-sage-light)]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-[family-name:var(--font-serif)] text-xl font-normal leading-snug text-[var(--brand-cream)]">
+                {item.title}
+              </h3>
+              <p className="text-[0.85rem] leading-relaxed text-[var(--brand-cream)]/65">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
-      </ContainerScroll>
+      </div>
 
       <Reveal className="mx-auto max-w-2xl pb-20 text-center text-[0.95rem] leading-[1.9] text-[var(--brand-cream)]/70">
         Cada experiência é analisada considerando o seu contexto de vida,
