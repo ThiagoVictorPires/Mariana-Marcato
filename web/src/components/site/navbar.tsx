@@ -40,8 +40,8 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <a href="/" className="flex shrink-0 items-center gap-2.5">
           <Image src="/logo-mm.png" alt="" width={36} height={26} className="h-7 w-auto shrink-0 opacity-90" />
-          <span className="hidden whitespace-nowrap font-[family-name:var(--font-serif)] text-[1.05rem] font-light tracking-wide text-[var(--brand-text-dark)]/90 lg:inline">
-            Mariana <span className="text-[var(--brand-sage-dark)]/80">Marcato</span>
+          <span className="hidden whitespace-nowrap font-[family-name:var(--font-serif)] text-[1.15rem] font-medium tracking-wide text-[var(--brand-text-dark)] lg:inline">
+            Mariana <span className="text-[var(--brand-sage-dark)]">Marcato</span>
           </span>
         </a>
 

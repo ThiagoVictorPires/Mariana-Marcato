@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 const serif = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
 });
 
