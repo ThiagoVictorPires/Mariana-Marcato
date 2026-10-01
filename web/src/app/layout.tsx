@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemePlayground } from "@/components/site/theme-playground";
 import { siteConfig } from "@/lib/site-config";
 
 const serif = Cormorant_Garamond({
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-[var(--brand-warm-white)] text-[var(--brand-text-dark)] font-[family-name:var(--font-sans-brand)]">
         {children}
+        <ThemePlayground />
       </body>
     </html>
   );

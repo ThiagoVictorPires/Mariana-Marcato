@@ -87,6 +87,8 @@ export function Hero() {
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-top mix-blend-multiply [filter:sepia(8%)_contrast(1.04)]"
           />
+          {/* Scrim so the fixed navbar stays legible over any part of the photo */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-28 bg-gradient-to-b from-black/50 via-black/15 to-transparent" />
         </motion.div>
       </div>
     </section>
