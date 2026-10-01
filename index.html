@@ -229,16 +229,17 @@
         </div>
       </div>
     </div>
-    <div class="contact-form fade-in">
+    <form class="contact-form fade-in" id="contactForm" novalidate>
       <h3 class="form-title">Envie uma mensagem</h3>
       <div class="form-grid">
-        <div class="form-group"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="seu@email.com"></div>
+        <div class="form-group"><label for="formNome">Nome</label><input type="text" id="formNome" name="nome" placeholder="Seu nome" required></div>
+        <div class="form-group"><label for="formEmail">Email</label><input type="email" id="formEmail" name="email" placeholder="seu@email.com" required></div>
       </div>
-      <div class="form-group"><label>Telefone</label><input type="tel" placeholder="(00) 00000-0000"></div>
-      <div class="form-group"><label>Mensagem</label><textarea rows="4" placeholder="Como posso te ajudar?"></textarea></div>
-      <button class="form-submit" onclick="submitForm()">Enviar Mensagem</button>
-    </div>
+      <div class="form-group"><label for="formTelefone">Telefone</label><input type="tel" id="formTelefone" name="telefone" placeholder="(00) 00000-0000" required></div>
+      <div class="form-group"><label for="formMensagem">Mensagem</label><textarea rows="4" id="formMensagem" name="mensagem" placeholder="Como posso te ajudar?" required></textarea></div>
+      <p class="form-error" id="formError" role="alert"></p>
+      <button class="form-submit" type="submit">Enviar Mensagem</button>
+    </form>
   </div>
 </section>
 

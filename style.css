@@ -434,6 +434,10 @@ nav.scrolled {
   margin-top: 8px;
 }
 .form-submit:hover { background: var(--terracotta); }
+.form-error {
+  font-size: 0.8rem; color: var(--terracotta);
+  margin-top: -8px; margin-bottom: 16px; min-height: 1.2em;
+}
 
 /* ── FOOTER ── */
 footer {
