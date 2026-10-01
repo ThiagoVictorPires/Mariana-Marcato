@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { motion } from "motion/react"
 
 import { Reveal } from "@/components/site/reveal"
@@ -18,20 +17,20 @@ function WhatsappGlyph({ className }: { className?: string }) {
 
 export function ContatoFinal() {
   return (
-    <section id="contato" className="bg-[var(--brand-text-dark)] px-4 pb-20 pt-4 text-center md:px-10 md:pb-28">
-      <Reveal className="mx-auto max-w-3xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[var(--brand-sage)] to-[var(--brand-sage-dark)] px-6 py-16 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.55)] md:px-16 md:py-20">
+    <section id="contato" className="bg-[var(--brand-text-dark)] px-4 py-20 text-center md:px-10">
+      <Reveal className="mx-auto max-w-2xl overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#25D366] to-[#128C4A] px-6 py-16 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.55)] md:px-16 md:py-20">
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           className="mx-auto mb-8 flex size-20 items-center justify-center rounded-full bg-white shadow-lg md:size-24"
         >
-          <WhatsappGlyph className="size-10 text-[var(--brand-sage-dark)] md:size-12" />
+          <WhatsappGlyph className="size-10 text-[#128C4A] md:size-12" />
         </motion.div>
 
         <h2 className="mb-4 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3.2vw,2.9rem)] font-light leading-tight text-white">
           Vamos <em className="italic">conversar</em>?
         </h2>
-        <p className="mx-auto mb-10 max-w-md text-[0.95rem] leading-[1.9] text-white/80">
+        <p className="mx-auto mb-10 max-w-md text-[0.95rem] leading-[1.9] text-white/90">
           Se você acredita que este pode ser o momento de cuidar da sua
           saúde mental, será um prazer acompanhar você nesse processo.
         </p>
@@ -40,37 +39,10 @@ export function ContatoFinal() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-[0.78rem] font-semibold uppercase tracking-[0.1em] text-[var(--brand-sage-dark)] shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl"
+          className="inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-[0.78rem] font-semibold uppercase tracking-[0.1em] text-[#128C4A] shadow-md transition-all hover:-translate-y-0.5 hover:shadow-xl"
         >
           <WhatsappGlyph className="size-4" />
-          Agendar primeira consulta
-        </a>
-
-        <p className="mt-6 flex items-center justify-center gap-2 text-[0.75rem] text-white/60">
-          <span aria-hidden>🔒</span>
-          Conversa 100% confidencial ·{" "}
-          <Link href="/politica-de-privacidade" className="underline underline-offset-2 hover:text-white">
-            saiba como cuidamos dos seus dados
-          </Link>
-        </p>
-      </Reveal>
-
-      <Reveal
-        delay={0.1}
-        className="mx-auto mt-16 max-w-md text-[0.9rem] leading-[1.9] text-[var(--brand-cream)]/60"
-      >
-        Você não precisa ter todas as respostas antes de procurar ajuda. Às
-        vezes, o primeiro passo é apenas encontrar um espaço onde você possa
-        compreender o que está vivendo.
-      </Reveal>
-      <Reveal delay={0.16} className="mt-6">
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block rounded-full border border-[var(--brand-sage-light)]/40 px-8 py-3 text-[0.72rem] uppercase tracking-[0.12em] text-[var(--brand-sage-light)] transition-colors hover:bg-[var(--brand-sage-light)]/10"
-        >
-          Dar o primeiro passo
+          Entre em contato
         </a>
       </Reveal>
     </section>
