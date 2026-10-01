@@ -22,9 +22,9 @@ export function ContatoFinal() {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          className="mx-auto mb-8 flex size-20 items-center justify-center rounded-full border-[3px] border-white md:size-24"
+          className="mx-auto mb-8 flex items-center justify-center"
         >
-          <WhatsappGlyph className="size-10 text-white md:size-12" />
+          <WhatsappGlyph className="size-16 text-white md:size-20" />
         </motion.div>
 
         <h2 className="mb-4 font-[family-name:var(--font-serif)] text-[clamp(1.9rem,3.2vw,2.9rem)] font-light leading-tight text-white">
