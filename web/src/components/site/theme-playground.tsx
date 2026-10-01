@@ -83,7 +83,10 @@ export function ThemePlayground() {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) {
       try {
-        const p: Palette = JSON.parse(saved)
+        // Merge with defaults in case a palette was saved before a field
+        // (like `background`) existed, so the panel never shows a blank
+        // or black swatch for missing data.
+        const p: Palette = { ...PRESETS[0], ...JSON.parse(saved) }
         setCustom(p)
         setActivePreset(PRESETS.find((pr) => pr.primary === p.primary && pr.accent === p.accent)?.name ?? null)
         applyPalette(p)
@@ -144,7 +147,7 @@ export function ThemePlayground() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-16 left-0 w-[300px] rounded-2xl border border-black/10 bg-white p-5 text-left shadow-2xl"
+            className="absolute bottom-16 left-0 max-h-[75vh] w-[300px] overflow-y-auto rounded-2xl border border-black/10 bg-white p-5 text-left shadow-2xl"
           >
             <p className="mb-1 text-sm font-semibold text-neutral-800">
               Testar paleta de cores
