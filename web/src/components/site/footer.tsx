@@ -13,7 +13,7 @@ export function Footer() {
           className="mx-auto h-24 w-auto md:h-28"
         />
         <p className="mt-1 text-[0.72rem] tracking-[0.08em] text-[var(--brand-sage-light)]">
-          Psicóloga Clínica · CRP: 04/65485
+          Psicóloga Clínica · CRP: 04/61208
         </p>
         <nav className="mt-6 flex items-center justify-center gap-6 text-[0.75rem] text-[var(--brand-cream)]/50">
           <Link href="/blog" className="transition-colors hover:text-[var(--brand-cream)]">

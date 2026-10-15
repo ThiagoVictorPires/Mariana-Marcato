@@ -18,7 +18,7 @@ const SECTIONS = [
     body: (
       <>
         Este site pertence a <strong>{siteConfig.name}</strong>, psicóloga
-        clínica inscrita no CRP 04/65485, atendimento em{" "}
+        clínica inscrita no CRP 04/61208, atendimento em{" "}
         {siteConfig.city}-{siteConfig.state}. Para qualquer assunto
         relacionado a esta política ou aos seus dados pessoais, entre em
         contato pelo e-mail{" "}

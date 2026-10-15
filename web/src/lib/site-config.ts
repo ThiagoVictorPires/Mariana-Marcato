@@ -8,7 +8,7 @@ function whatsappLink(message: string = DEFAULT_MESSAGE) {
 
 export const siteConfig = {
   name: "Mariana Marcato",
-  crp: "04/65485",
+  crp: "04/61208",
   email: "mariana.marcato@outlook.com",
   whatsappNumber: WHATSAPP_NUMBER,
   whatsappPhoneDisplay: WHATSAPP_PHONE_DISPLAY,
